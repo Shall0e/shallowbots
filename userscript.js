@@ -5,6 +5,8 @@
 // @description  try to take over the world!
 // @author       You
 // @match        https://scratch.mit.edu/projects/*
+// @downloadURL  https://github.com/Shall0e/shallowbots/blob/main/userscript.js
+// @updateURL    https://github.com/Shall0e/shallowbots/blob/main/userscript.js
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=mozilla.org
 // @grant        none
 // ==/UserScript==
