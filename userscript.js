@@ -8,25 +8,23 @@
 // @downloadURL  https://github.com/Shall0e/shallowbots/blob/main/userscript.js
 // @updateURL    https://github.com/Shall0e/shallowbots/blob/main/userscript.js
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=mozilla.org
-// @grant        none
+// @grant        GM_xmlhttpRequest
 // ==/UserScript==
-
-
-GM_xmlhttpRequest({
-  method: "GET",
-  url: "https://raw.githubusercontent.com/Shall0e/shallowbots/main/multiplayerGames.json",
-  onload: function(response) {
-    // Get the response text
-    const text = response.responseText;
-
-    // Do something with the links
-    // For example, log them to the console
-    console.log(text);
-  }
-});
 
 (function() {
   'use strict';
+  var games;
+  GM_xmlhttpRequest({
+    method: "GET",
+    url: "https://example.com/",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    onload: function(response) {
+      console.log(response.responseText);
+      games = (response.responseText)
+    }
+  });
   window.onload = function() {
     alert('SHALLOWBOT LOADED, press green-flag to launch.')
     var scratch = document.getElementById('app')._reactRootContainer._internalRoot.current.child.pendingProps.store.getState()
