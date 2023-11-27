@@ -1,5 +1,32 @@
 [
-  "https://scratch.mit.edu/projects/12785898/",
-  "https://scratch.mit.edu/projects/378507713",
-  "https://scratch.mit.edu/projects/823872487/"
+  {
+    "project-url": "https://scratch.mit.edu/projects/12785898/",
+    "rules": {
+      "x": 0,
+      "y": 0,
+      "allPlayerTP": false,
+      "stopTimeout": false,
+      "customCode": ""
+    }
+  },
+  {
+    "project-url": "https://scratch.mit.edu/projects/378507713",
+    "rules": {
+      "x": 0,
+      "y": 0,
+      "allPlayerTP": false,
+      "stopTimeout": false,
+      "customCode": ""
+    }
+  },
+  {
+    "project-url": "https://scratch.mit.edu/projects/823872487/",
+    "rules": {
+      "x": 0,
+      "y": 0,
+      "allPlayerTP": false,
+      "stopTimeout": false,
+      "customCode": ""
+    }
+  }
 ]
