@@ -11,6 +11,20 @@
 // @grant        none
 // ==/UserScript==
 
+
+GM_xmlhttpRequest({
+  method: "GET",
+  url: "https://raw.githubusercontent.com/Shall0e/shallowbots/main/multiplayerGames.json",
+  onload: function(response) {
+    // Get the response text
+    const text = response.responseText;
+
+    // Do something with the links
+    // For example, log them to the console
+    console.log(text);
+  }
+});
+
 (function() {
   'use strict';
   window.onload = function() {
