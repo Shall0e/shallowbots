@@ -5,36 +5,72 @@
 // @description  try to take over the world!
 // @author       You
 // @match        https://scratch.mit.edu/projects/*
-// @downloadURL  https://github.com/Shall0e/shallowbots/blob/main/userscript.js
-// @updateURL    https://github.com/Shall0e/shallowbots/blob/main/userscript.js
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=mozilla.org
 // @grant        GM_xmlhttpRequest
+// @grant        GM_log
 // ==/UserScript==
 
+
 (function() {
-  'use strict';
-  var games;
-  GM_xmlhttpRequest({
-    method: "GET",
-    url: "https://example.com/",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    onload: function(response) {
-      console.log(response.responseText);
-      games = (response.responseText)
-    }
-  });
-  window.onload = function() {
-    alert('SHALLOWBOT LOADED, press green-flag to launch.')
+  if ((window.location.href).includes('editor') && (window.location.href).includes('scratch.mit.edu/')) {
     var scratch = document.getElementById('app')._reactRootContainer._internalRoot.current.child.pendingProps.store.getState()
-    scratch.scratchGui.vm.runtime.ioDevices.userData._username = (Math.floor(Math.random() * 999)) + '//   sub to @shall0e on YT'
-    scratch.permissions.scratcher = true
-    scratch.permissions.educator = true
     scratch.scratchGui.mode.hasEverEnteredEditor = false
-    scratch.permissions.new_scratcher = false
-    scratch.permissions.educator_invitee = false
-    scratch.scratchGui.vm.runtime.greenFlag()
-    scratch.scratchGui.vm.greenFlag()
+  }
+
+  var data = (fetch ("https://raw.githubusercontent.com/Shall0e/shallowbots/main/multiplayerGames.json")
+  .then (response => response.text ())
+  .then (text => console.log (text))
+  .catch (error => console.error (error)));
+
+  var usernames = [
+    'dsc.gg/real-scratchers',
+    'dsc.gg/scratchbots',
+    'dsc.gg/multiplayerbot',
+    'dsc.gg/griffbot'
+  ]
+
+  function searchData(search, target) {
+    for (let i = 0; i < search.length; i++) {
+      if ((search[i].projecturl).replaceAll('/', '') == target.replaceAll('/', '')) {
+        return search[i];
+      }
+    }
+    return null;
+  }
+  window.onload = function() {
+    if ((searchData(data, window.location.href) !== null)) {
+      var projectObj = (searchData(data, window.location.href))
+      var scratch = document.getElementById('app')._reactRootContainer._internalRoot.current.child.pendingProps.store.getState()
+      //ignore: custom runtime functions
+      // scratch.scratchGui.vm.runtime.getTargetForStage().lookupVariableByNameAndType(name, type).value = value
+      // scratch.scratchGui.vm.runtime.getSpriteTargetByName(stageOrSprite).lookupVariableByNameAndType(name, type).value = value
+      function setUsername(username) {
+        scratch.scratchGui.vm.runtime.ioDevices.userData._username = username
+      }
+      setUsername((Math.floor(Math.random() * 99)) + ' / ' + usernames[Math.round(Math.random() * (usernames.length - 1) + 0)]);
+      scratch.permissions.scratcher = true;
+      scratch.permissions.new_scratcher = false;
+      alert('SHALLOWBOT LOADED, press green-flag to launch.')
+      var x = (Math.random() * (5300 - 2400) + 2400);
+      var y = (Math.random() * (1000 - 50) + 50)
+      scratch.scratchGui.vm.runtime.greenFlag();
+      scratch.scratchGui.vm.greenFlag()
+
+      function setXY(xxx, yyy) {
+        x = xxx
+        y = yyy
+        eval(projectObj.rules.customCode);
+      }
+
+      function getXY() {
+        return {
+          'x': x,
+          'y': y
+        }
+      }
+      setInterval(function() {
+        eval(projectObj.rules.customCode);
+      }, 2)
+    }
   }
 })();
