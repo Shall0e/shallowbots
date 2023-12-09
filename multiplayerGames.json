@@ -1,7 +1,7 @@
 [{
-      "projecturl": "https://scratch.mit.edu/projects/12785898/",
-      "rules": {
-        "customCode": `
+    "projecturl": "https://scratch.mit.edu/projects/12785898/",
+    "rules": {
+      "customCode": `
           if (scratch.scratchGui.vm.runtime.getSpriteTargetByName('Multiplayer').lookupVariableByNameAndType('@Max Players', '').value == scratch.scratchGui.vm.runtime.getSpriteTargetByName('Multiplayer').lookupVariableByNameAndType('@Player Count', '').value) {
             scratch.scratchGui.vm.runtime.greenFlag();
             scratch.scratchGui.vm.greenFlag();
@@ -10,34 +10,34 @@
           scratch.scratchGui.vm.runtime.getTargetForStage().lookupVariableByNameAndType('Player X', '').value = x;
           scratch.scratchGui.vm.runtime.getTargetForStage().lookupVariableByNameAndType('Player Y', '').value = y;
           `
-      }
-    },
-    {
-      "projecturl": "https://scratch.mit.edu/projects/378507713",
-      "rules": {
-        "customCode": `
-          if (scratch.scratchGui.vm.runtime.getSpriteTargetByName('Multiplayer').lookupVariableByNameAndType('@Max Players', '').value == scratch.scratchGui.vm.runtime.getSpriteTargetByName('Multiplayer').lookupVariableByNameAndType('@Player Count', '').value) {
-            scratch.scratchGui.vm.runtime.greenFlag();
-            scratch.scratchGui.vm.greenFlag();
-          };
-          scratch.scratchGui.vm.runtime.getSpriteTargetByName('The Player').lookupVariableByNameAndType('IdleTime', '').value = '99999999999999';
-          scratch.scratchGui.vm.runtime.getTargetForStage().lookupVariableByNameAndType('Player X', '').value = getXY().x;
-          scratch.scratchGui.vm.runtime.getTargetForStage().lookupVariableByNameAndType('Player Y', '').value = getXY().y;
-          `
-      }
-    },
-    {
-      "projecturl": "https://scratch.mit.edu/projects/823872487/",
-      "rules": {
-        "customCode": `
-          if (scratch.scratchGui.vm.runtime.getSpriteTargetByName('Multiplayer').lookupVariableByNameAndType('@Max Players', '').value == scratch.scratchGui.vm.runtime.getSpriteTargetByName('Multiplayer').lookupVariableByNameAndType('@Player Count', '').value) {
-            scratch.scratchGui.vm.runtime.greenFlag();
-            scratch.scratchGui.vm.greenFlag();
-          };
-          scratch.scratchGui.vm.runtime.getSpriteTargetByName('The Player').lookupVariableByNameAndType('IdleTime', '').value = '99999999999999';
-          scratch.scratchGui.vm.runtime.getTargetForStage().lookupVariableByNameAndType('Player X', '').value = getXY().x;
-          scratch.scratchGui.vm.runtime.getTargetForStage().lookupVariableByNameAndType('Player Y', '').value = getXY().y;
-          `
-      }
     }
-  ]
+  },
+  {
+    "projecturl": "https://scratch.mit.edu/projects/378507713",
+    "rules": {
+      "customCode": `
+          if (scratch.scratchGui.vm.runtime.getSpriteTargetByName('Multiplayer').lookupVariableByNameAndType('@Max Players', '').value == scratch.scratchGui.vm.runtime.getSpriteTargetByName('Multiplayer').lookupVariableByNameAndType('@Player Count', '').value) {
+            scratch.scratchGui.vm.runtime.greenFlag();
+            scratch.scratchGui.vm.greenFlag();
+          };
+          scratch.scratchGui.vm.runtime.getSpriteTargetByName('The Player').lookupVariableByNameAndType('IdleTime', '').value = '99999999999999';
+          scratch.scratchGui.vm.runtime.getTargetForStage().lookupVariableByNameAndType('Player X', '').value = getXY().x;
+          scratch.scratchGui.vm.runtime.getTargetForStage().lookupVariableByNameAndType('Player Y', '').value = getXY().y;
+          `
+    }
+  },
+  {
+    "projecturl": "https://scratch.mit.edu/projects/823872487/",
+    "rules": {
+      "customCode": `
+          if (scratch.scratchGui.vm.runtime.getSpriteTargetByName('Multiplayer').lookupVariableByNameAndType('@Max Players', '').value == scratch.scratchGui.vm.runtime.getSpriteTargetByName('Multiplayer').lookupVariableByNameAndType('@Player Count', '').value) {
+            scratch.scratchGui.vm.runtime.greenFlag();
+            scratch.scratchGui.vm.greenFlag();
+          };
+          scratch.scratchGui.vm.runtime.getSpriteTargetByName('The Player').lookupVariableByNameAndType('IdleTime', '').value = '99999999999999';
+          scratch.scratchGui.vm.runtime.getTargetForStage().lookupVariableByNameAndType('Player X', '').value = getXY().x;
+          scratch.scratchGui.vm.runtime.getTargetForStage().lookupVariableByNameAndType('Player Y', '').value = getXY().y;
+          `
+    }
+  }
+]
