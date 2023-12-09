@@ -3,12 +3,13 @@ if ((window.location.href).includes('editor') && (window.location.href).includes
   scratch.scratchGui.mode.hasEverEnteredEditor = false
 }
 
-var data;
+var data1;
 fetch("https://raw.githubusercontent.com/Shall0e/shallowbots/main/multiplayerGames.json")
   .then(response => response.text())
   .then(text => (data = text))
   .catch(error => console.error(error));
-console.log(data)
+eval('var data = '+data)
+
 var usernames = [
   'dsc.gg/real-scratchers',
   'dsc.gg/scratchbots',
@@ -16,14 +17,16 @@ var usernames = [
   'dsc.gg/griffbot'
 ]
 
-function searchData(search, target) {
-  for (let i = 0; i < search.length; i++) {
-    if ((search[i].projecturl).replaceAll('/', '') == target.replaceAll('/', '')) {
-      return search[i];
+function searchData(searcha, target) {
+  for (let i = 0; i < searcha.length; i++) {
+    if ((searcha[i].projecturl).replaceAll('/', '') == target.replaceAll('/', '')) {
+      return searcha[i];
     }
   }
   return null;
 }
+
+
 if ((searchData(data, window.location.href) !== null)) {
   var projectObj = (searchData(data, window.location.href))
   var scratch = document.getElementById('app')._reactRootContainer._internalRoot.current.child.pendingProps.store.getState()
