@@ -50,7 +50,6 @@
       setUsername((Math.floor(Math.random() * 99)) + ' / ' + usernames[Math.round(Math.random() * (usernames.length - 1) + 0)]);
       scratch.permissions.scratcher = true;
       scratch.permissions.new_scratcher = false;
-      alert('SHALLOWBOT LOADED, press green-flag to launch.')
       var x = (Math.random() * (5300 - 2400) + 2400);
       var y = (Math.random() * (1000 - 50) + 50)
       scratch.scratchGui.vm.runtime.greenFlag();
