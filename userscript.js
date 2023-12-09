@@ -4,11 +4,13 @@ if ((window.location.href).includes('editor') && (window.location.href).includes
 }
 
 var data1;
-fetch("https://raw.githubusercontent.com/Shall0e/shallowbots/main/multiplayerGames.json")
+var data;
+await fetch("https://raw.githubusercontent.com/Shall0e/shallowbots/main/multiplayerGames.json")
   .then(response => response.text())
   .then(text => (data = text))
   .catch(error => console.error(error));
-eval('var data = '+data)
+eval('data = '+data)
+console.log(data)
 
 var usernames = [
   'dsc.gg/real-scratchers',
